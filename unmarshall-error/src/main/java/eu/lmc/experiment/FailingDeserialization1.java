@@ -10,7 +10,7 @@ import java.util.UUID;
  * Special class that handles its own serialization/deserialization and <b>FAILS</b>.
  * Used to test how is deserialization error handled.
  */
-public class FailingDeserializationClass implements Serializable {
+public class FailingDeserialization1 implements Serializable {
 
     private UUID uuid = UUID.randomUUID();
 
@@ -25,14 +25,14 @@ public class FailingDeserializationClass implements Serializable {
 
     private void writeObject(java.io.ObjectOutputStream out)
             throws IOException {
-        System.out.println(">>>> Serializing: " + uuid);
+        System.out.println(">>>> Serializing 1: " + uuid);
         out.writeUTF(uuid.toString());
     }
 
     private void readObject(java.io.ObjectInputStream in)
             throws IOException, ClassNotFoundException {
         final String str = in.readUTF();
-        System.out.println(">>>> Deserializing: " + str);
+        System.out.println(">>>> Deserializing 1: " + str);
         uuid = UUID.fromString(str);
         throw new InvalidClassException("always failing!");
     }

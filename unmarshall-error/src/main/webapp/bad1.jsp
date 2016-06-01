@@ -1,4 +1,4 @@
-<%@ page import="eu.lmc.experiment.FailingDeserializationClass" %>
+<%@ page import="eu.lmc.experiment.FailingDeserialization1" %>
 <html>
 <head>
     <title>Unmarshalling error producer</title>
@@ -9,7 +9,7 @@
 
 <%
     session.setAttribute("good-field-1", "good");
-    session.setAttribute("bad-field-1", new FailingDeserializationClass());
+    session.setAttribute("bad-field-1", new FailingDeserialization1());
 
 %>
 
