@@ -4,4 +4,7 @@
 
 <web-app>
     <display-name>Unmarshall error reproducer</display-name>
+
+    <distributable/>
+
 </web-app>
