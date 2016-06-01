@@ -1,6 +1,7 @@
 package eu.lmc.experiment;
 
 import java.io.IOException;
+import java.io.InvalidClassException;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.UUID;
@@ -33,7 +34,7 @@ public class FailingDeserializationClass implements Serializable {
         final String str = in.readUTF();
         System.out.println(">>>> Deserializing: " + str);
         uuid = UUID.fromString(str);
-        throw new UnsupportedOperationException("always failing!");
+        throw new InvalidClassException("always failing!");
     }
 
     private void readObjectNoData()

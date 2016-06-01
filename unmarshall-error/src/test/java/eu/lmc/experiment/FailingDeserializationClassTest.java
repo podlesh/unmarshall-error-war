@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -13,7 +14,7 @@ import java.io.ObjectOutputStream;
  */
 public class FailingDeserializationClassTest {
 
-    @Test(expected = UnsupportedOperationException.class)
+    @Test(expected = InvalidClassException.class)
     public void testDeserialization() throws Exception {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
